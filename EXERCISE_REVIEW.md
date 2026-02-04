@@ -39,14 +39,14 @@ The exercise guides learners through:
 ## Technical Implementation
 
 ### Automation
-The exercise uses GitHub Actions workflows (`./github/workflows/`) to:
+The exercise uses GitHub Actions workflows (`.github/workflows/`) to:
 - Detect learner progress
 - Post instructional comments on the exercise issue
 - Enable/disable workflows as steps complete
 - Validate step completion criteria
 
 ### Step Content
-Markdown files in `./.github/steps/` contain:
+Markdown files in `.github/steps/` contain:
 - Educational content about GitHub concepts
 - Step-by-step instructions with screenshots
 - Troubleshooting tips
