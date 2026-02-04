@@ -100,8 +100,13 @@ class MapCoreDeepReview {
    * @returns {Array} Prepared data array
    */
   prepareDataForMapping(data) {
-    // If data already has a hierarchical structure, return it
-    if (data.subtopics || data.subjects || data.matters) {
+    // If data already has subtopics array, return it
+    if (data.subtopics && Array.isArray(data.subtopics)) {
+      return data.subtopics;
+    }
+
+    // If data has subjects or matters, wrap in subtopic structure
+    if (data.subjects || data.matters) {
       return [data];
     }
 
