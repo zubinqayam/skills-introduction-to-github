@@ -144,16 +144,15 @@ class ContentExtractor:
         Returns:
             Language hint string
         """
-        # Simple heuristic - check for common English words
+        # Simple heuristic - check for common English words using word boundaries
         common_english_words = ['the', 'is', 'at', 'which', 'on', 'a', 'an']
         data_lower = data.lower()
-        # Check for word boundaries - count all occurrences
-        english_count = sum(data_lower.count(' ' + word + ' ') + 
-                           data_lower.count(' ' + word) + 
-                           data_lower.count(word + ' ') 
-                           for word in common_english_words)
-        # Also check if data starts with these words
-        english_count += sum(1 for word in common_english_words if data_lower.startswith(word + ' '))
+        # Count occurrences with proper word boundaries
+        english_count = 0
+        for word in common_english_words:
+            pattern = r'\b' + word + r'\b'
+            matches = re.findall(pattern, data_lower)
+            english_count += len(matches)
         
         if english_count >= 2:
             return 'likely_english'
