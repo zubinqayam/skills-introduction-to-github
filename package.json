@@ -1,0 +1,21 @@
+{
+  "name": "mapcore-deepreview",
+  "version": "1.0.0",
+  "description": "MapCore DeepReview - A systematic methodology for transforming unstructured data into hierarchical structures",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "example": "node src/example.js",
+    "test": "node src/test.js"
+  },
+  "keywords": [
+    "data",
+    "mapping",
+    "hierarchical",
+    "deepreview",
+    "governance"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
